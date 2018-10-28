@@ -1,6 +1,5 @@
-// IndexHeader.jsx
 import React, { Component } from 'react';
-import IndexSearch from './IndexSearch';
+import FormContainer from '../FormContainer';
 
 class IndexHeader extends Component {
    render() {
@@ -8,9 +7,9 @@ class IndexHeader extends Component {
          <h2 className="index-header__title">Search Job Listing</h2>
       );
       return(
-         <div>
+         <div className="header__container">
             <IndexTitle />
-            <IndexSearch />
+            <FormContainer />
          </div>
       )
    }

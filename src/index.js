@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import IndexPage from './Index/IndexPage';
+import './Icons.jsx';
 import './css-reset.scss';
 import './main.scss';
 

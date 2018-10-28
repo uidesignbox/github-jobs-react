@@ -4,7 +4,7 @@ import IndexHeader from './IndexHeader';
 class IndexPage extends Component {
    render() {
       return(
-         <div>
+         <div className="index__main">
             <IndexHeader />
          </div>
       )
