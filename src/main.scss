@@ -3,7 +3,6 @@
 }
 
 // Index Header
-
 .index-header__title {
    margin-bottom: 20px;
    font-size: 24px;
@@ -64,7 +63,14 @@
 }
 
 // Post Listing
-
 .post-listing {
    padding: 0 15px;
+}
+
+.post__item {
+   border: 1px solid #ccc;
+   padding: 8px 10px;
+   border-radius: 5px;
+   margin-bottom: 20px;
+   background: #fff;
 }

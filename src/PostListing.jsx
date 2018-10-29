@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+import PostItem from './PostItem';
+import PropTypes from 'prop-types';
 
 class PostListing extends Component {
    render() {
       return (
          <section className="post-listing">
-            <h2>Listing.jsx</h2>
+            {this.props.items.map((item, i) =>
+               <PostItem key={i} item={item} /> )}
          </section>
       )
    }
+};
+
+PostListing.propTypes = {
+   items: PropTypes.array.isRequired
 };
 
 export default PostListing;

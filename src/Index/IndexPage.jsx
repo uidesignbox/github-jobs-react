@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import jsonp from 'jsonp';
 import IndexHeader from './IndexHeader';
 import PostListing from '../PostListing';
 
@@ -11,24 +12,18 @@ class IndexPage extends Component {
    }
 
    componentDidMount() {
-      let url = 'https://jobs.github.com/positions.json';
-
-      fetch(url, {
-         mode: 'cors',
-         headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            'Access-Control-Allow-Origin':'*'
+      const url = 'https://jobs.github.com/positions.json';
+      jsonp(url, null, (err, data) => {
+         if (err) {
+            console.log(err);
+            return;
          }
+         this.setState({ results: data })
       })
-      .then(function(res) {
-         console.log(res.json())
-      })
-      .catch(err => console.log(err))
-
    }
 
    render() {
-      return(
+      return (
          <div className="index__main">
             <IndexHeader />
             { this.state.results &&
