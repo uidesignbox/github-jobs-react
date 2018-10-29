@@ -1,10 +1,12 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { 
-   faCheckSquare,
-   faCoffee,
-   faSearch
+   faSearch,
+   faMapMarkerAlt,
+   faUser,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
-   faCheckSquare, faCoffee, faSearch
+   faSearch,
+   faMapMarkerAlt,
+   faUser,
 )

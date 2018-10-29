@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ label, text, type, placeholder, value, handleChange }) => (
+const Input = ({ label, text, type, value, handleChange }) => (
    <div className="form-section">
       <label htmlFor={label} hidden>{text}</label>
       <input 
-         type={type} className="form__input" value={value} onChange={handleChange} placeholder={placeholder} required
+         type={type} className="form__input" value={value} onChange={handleChange} required
       />
    </div>
 );

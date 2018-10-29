@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormContainer from '../FormContainer';
+import FilterItems from './FilterItems';
 
 class IndexHeader extends Component {
    render() {
@@ -10,6 +11,7 @@ class IndexHeader extends Component {
          <div className="header__container">
             <IndexTitle />
             <FormContainer />
+            <FilterItems />
          </div>
       )
    }

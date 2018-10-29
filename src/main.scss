@@ -13,15 +13,16 @@
 
 #search-form {
    position: relative;
+   margin-bottom: 15px;
    .icon {
       position: absolute;
-      left: 15px;
+      left: 12px;
       top: 30%;
    }
 }
 
 .form__input {
-   padding: 12px 15px 12px 40px;
+   padding: 10px 30px 10px 40px;
    outline: none;
    font-size: 15px;
    color: #333;
@@ -31,4 +32,39 @@
    &::placeholder {
       color: #333;
    }
+}
+
+.filter__container {
+   padding: 15px 0;
+   display: flex;
+   max-width: 300px;
+   justify-content: space-between;
+   button {
+      padding: 7px 12px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+      border: none;
+      border-radius: 15px;
+      background: #afafaf;
+      cursor: pointer;
+   }
+   .icon {
+      margin-left: 3px;
+   }
+   .filter__all {
+      min-width: 50px;
+   }
+   .filter__location {
+      background: #9eca4d;
+   }
+   .filter__position {
+      background: #e17bda;
+   }
+}
+
+// Post Listing
+
+.post-listing {
+   padding: 0 15px;
 }
