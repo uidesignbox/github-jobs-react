@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const DetailHead = (props) => (
-   <header>
-      <div>
-         <h2>DetailHead</h2>
-         <h2>{props.info.title}</h2>
+   <header className="detail__header">
+      <div className="detail__header--img">
+         <img src={props.info.company_logo} alt={`Brand logo for ${props.info.company}`}/>
+      </div>
+      <div className="header__content">
+         <h2 className="header__title">{props.info.title}</h2>
+         <p className="header__company">{props.info.company}</p>
+         <p className="header__location">{props.info.location}</p>
       </div>
    </header>
 );

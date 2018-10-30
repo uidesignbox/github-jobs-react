@@ -122,3 +122,28 @@
    right: 0;
    bottom: 0;
 }
+
+.detail__header {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding: 10px;
+   margin-bottom: 30px;
+   border: 1px solid hotpink;
+   .header__content {
+      padding: 5px;
+   }
+   .header__title {
+      margin-bottom: 15px;
+      font-size: 20px;
+   }
+   .header__company {
+      margin-bottom: 10px;
+      font-size: 14px;
+   }
+   .header__location {
+      font-size: 14px;
+      font-weight: 400;
+      color: #777;
+   }
+}
