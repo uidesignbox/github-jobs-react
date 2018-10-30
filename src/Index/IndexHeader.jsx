@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FormContainer from '../FormContainer';
-import FilterItems from './FilterItems';
 
 class IndexHeader extends Component {
    render() {
@@ -10,11 +10,14 @@ class IndexHeader extends Component {
       return(
          <div className="header__container">
             <IndexTitle />
-            <FormContainer />
-            <FilterItems />
+            <FormContainer search={this.props.search} location={this.props.location} query={this.props.query} />
          </div>
       )
    }
 };
+
+IndexHeader.propTypes = {
+   search: PropTypes.func
+}
 
 export default IndexHeader;

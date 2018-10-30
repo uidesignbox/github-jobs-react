@@ -10,8 +10,16 @@ const PostItem = (props) => {
       <article className="post__item">
          { props.item.company_logo &&
             <div className="post__item--img">
-               <img src={props.item.company_logo} alt={`Brand logo for ${props.item.company}`}/>
-            </div>}
+               <Link to={{
+                  pathname: `/detail/${props.item.id}`,
+                  state: {
+                     post: props.item
+                  }
+               }}>
+                  <img src={props.item.company_logo} alt={`Brand logo for ${props.item.company}`}/>
+               </Link>
+            </div>
+         }
          <div className="post__content">
             <Link to={{
             pathname: `/detail/${props.item.id}`,

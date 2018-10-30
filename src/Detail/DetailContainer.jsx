@@ -18,7 +18,6 @@ class DetailContainer extends Component {
    }
 
    render() {
-      console.log(this.state.post)
       return (
          <div>
             {this.state.post &&

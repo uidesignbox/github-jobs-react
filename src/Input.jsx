@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ label, text, type, value, handleChange }) => (
+const Input = ({ label, text, type, value, handleSearch }) => (
    <div className="form-section">
       <label htmlFor={label} hidden>{text}</label>
       <input 
-         type={type} className="form__input" value={value} onChange={handleChange} required
+         type={type} className="form__input" value={value} onChange={handleSearch}
       />
    </div>
 );
@@ -16,7 +16,7 @@ Input.propTypes = {
    placeholder: PropTypes.string,
    type: PropTypes.string.isRequired,
    value: PropTypes.string.isRequired,
-   handleChange: PropTypes.func.isRequired
+   handleSearch: PropTypes.func.isRequired
 };
 
 export default Input;

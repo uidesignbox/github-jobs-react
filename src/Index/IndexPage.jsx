@@ -9,14 +9,41 @@ class IndexPage extends Component {
       super();
       this.state = {
          results: null,
-         currentIndex: 0
+         currentIndex: 0,
+         query: '',
+         location: ''
       }
+      this.fetchData = this.fetchData.bind(this)
+      this.handleQuery = this.handleQuery.bind(this)
+      this.handleLocation = this.handleLocation.bind(this)
+   }
+
+   handleQuery(value) {
+      this.setState({ query : value })
+   }
+
+   handleLocation(value) {
+      this.setState({ location : value })
+   }
+
+   fetchData(query) {
+      const searchString = this.state.query ? `&search=${this.state.query}` : '';
+      const searchLocation = this.state.location ? `&location=${this.state.location}` : ''
+      query = searchString || searchLocation ? searchString + searchLocation : '&page=1';
+      const url = `https://jobs.github.com/positions.json?${query}`;
+      jsonp(url, null, (err, data) => {
+         if (err) {
+            console.log(err);
+            return;
+         }
+         this.setState({ results: data })
+      })
    }
 
    componentWillMount() {
       const dataAvailable = localStorage.getItem('githubJobs');
       if (dataAvailable) {
-         console.log('data is available for githubjobs');
+         console.log('DATA AVAILABLE githubjobs');
          this.setState({ results: JSON.parse(dataAvailable) })
       }
    }
@@ -24,17 +51,14 @@ class IndexPage extends Component {
    componentDidMount() {
       // If not in local storage then fetch data
       if (!localStorage.getItem('githubJobs')) {
-         const url = 'https://jobs.github.com/positions.json?&page=1';
-         jsonp(url, null, (err, data) => {
-            if (err) {
-               console.log(err);
-               return;
-            }
-            console.log('NOT AVAIL');
-            localStorage.setItem('githubJobs', JSON.stringify(data))
-            this.setState({ results: data })
-         })
+         console.log('NOT AVAIL');
+         this.fetchData()
       }
+   }
+
+   componentDidUpdate() {
+      console.log('I did UPDATE')
+      localStorage.setItem('githubJobs', JSON.stringify(this.state.results))
    }
 
    componentWillUnmount() {
@@ -44,7 +68,7 @@ class IndexPage extends Component {
    render() {
       return (
          <div className="index__main">
-            <IndexHeader />
+            <IndexHeader search={this.fetchData} location={this.handleLocation} query={this.handleQuery} />
             { this.state.results &&
                <PostListing items={this.state.results.slice(0,10)} /> }
             {this.state.results && this.state.results.length >= 50 ?
