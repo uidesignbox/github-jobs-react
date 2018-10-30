@@ -1,8 +1,8 @@
 import React from 'react';
 
 const PaginateItem = (props) => (
-   <li>
-      <span>This is an item</span>
+   <li className="paginate__item">
+      <span>1</span>
    </li>
 );
 

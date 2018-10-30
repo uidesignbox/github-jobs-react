@@ -29,7 +29,7 @@ class IndexPage extends Component {
    fetchData(query) {
       const searchString = this.state.query ? `&search=${this.state.query}` : '';
       const searchLocation = this.state.location ? `&location=${this.state.location}` : ''
-      query = searchString || searchLocation ? searchString + searchLocation : '&page=1';
+      query = searchString || searchLocation ? searchString + searchLocation : '';
       const url = `https://jobs.github.com/positions.json?${query}`;
       jsonp(url, null, (err, data) => {
          if (err) {
@@ -43,7 +43,6 @@ class IndexPage extends Component {
    componentWillMount() {
       const dataAvailable = localStorage.getItem('githubJobs');
       if (dataAvailable) {
-         console.log('DATA AVAILABLE githubjobs');
          this.setState({ results: JSON.parse(dataAvailable) })
       }
    }
@@ -51,7 +50,6 @@ class IndexPage extends Component {
    componentDidMount() {
       // If not in local storage then fetch data
       if (!localStorage.getItem('githubJobs')) {
-         console.log('NOT AVAIL');
          this.fetchData()
       }
    }
