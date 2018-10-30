@@ -27,7 +27,7 @@ class IndexPage extends Component {
          <div className="index__main">
             <IndexHeader />
             { this.state.results &&
-               <PostListing items={this.state.results} /> }
+               <PostListing items={this.state.results.slice(0,5)} /> }
          </div>
       )
    }
