@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 const DetailHead = (props) => (
    <header className="detail__header">
-      <div className="detail__header--img">
-         <img src={props.info.company_logo} alt={`Brand logo for ${props.info.company}`}/>
-      </div>
+      { props.info.company_logo &&
+         <div className="detail__header--img">
+            <img src={props.info.company_logo} alt={`Brand logo for ${props.info.company}`}/>
+         </div>}
       <div className="header__content">
          <h2 className="header__title">{props.info.title}</h2>
          <p className="header__company">{props.info.company}</p>

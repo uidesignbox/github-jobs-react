@@ -4,11 +4,15 @@ import {
    faMapMarkerAlt,
    faUser,
    faClock,
+   faBuilding,
+   faFileAlt,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
    faSearch,
    faMapMarkerAlt,
    faUser,
-   faClock
+   faClock,
+   faBuilding,
+   faFileAlt
 )

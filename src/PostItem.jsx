@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 
 const PostItem = (props) => (
    <article className="post__item">
-      <div className="post__item--img">
-         <img src={props.item.company_logo} alt={`Brand logo for ${props.item.company}`}/>
-      </div>
+      { props.item.company_logo &&
+         <div className="post__item--img">
+            <img src={props.item.company_logo} alt={`Brand logo for ${props.item.company}`}/>
+         </div>}
       <div className="post__content">
          <Link to={{
            pathname: `/detail/${props.item.id}`,

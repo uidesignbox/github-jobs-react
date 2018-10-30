@@ -127,23 +127,132 @@
    display: flex;
    flex-direction: row;
    align-items: center;
-   padding: 10px;
-   margin-bottom: 30px;
-   border: 1px solid hotpink;
+   padding: 25px 15px;
+   margin-bottom: 10px;
+   .detail__header--img {
+      flex: 2;
+   }
    .header__content {
+      flex: 2;
       padding: 5px;
    }
    .header__title {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-size: 20px;
+      line-height: 120%;
+      font-weight: 600;
    }
    .header__company {
       margin-bottom: 10px;
-      font-size: 14px;
+      font-size: 15px;
    }
    .header__location {
       font-size: 14px;
       font-weight: 400;
       color: #777;
+   }
+}
+
+.detail__body {
+   padding: 20px;
+   margin-bottom: 20px;
+   border-bottom: 1px solid #ccc;
+   p {
+      margin-bottom: 20px;
+      font-size: 17px;
+      line-height: 120%;
+      color: #333;
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+   a {
+      color: #39bcbc;
+      text-decoration: none;
+   }
+   strong {
+      font-weight: 600;
+   }
+   em {
+      font-style: italic;
+   }
+   h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 600;
+   }
+   ul, ol {
+      margin-bottom: 25px;
+      padding-left: 25px;
+   }
+   li {
+      margin-bottom: 15px;
+      line-height: 120%;
+      color: #333;
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+}
+
+.detail__footer {
+   padding: 20px;
+   .detail__footer-meta {
+      padding: 20px 0;
+      .icon {
+         margin-right: 15px;
+         font-size: 24px;
+         color: #777;
+      }
+      a {
+         font-size: 17px;
+         font-weight: 200;
+         vertical-align: text-top;
+         text-decoration: none;
+         color: #777;
+         &:hover {
+            color: #000;
+            text-decoration: underline;
+         }
+      }
+   }
+   .additional-info {
+      margin-bottom: 30px;
+      font-size: 14px;
+      p {
+         margin-bottom: 15px;
+         line-height: 135%;
+      }
+   }
+   .footer-section {
+      margin-bottom: 15px;
+   }
+}
+
+.detail__footer-info {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   align-items: center;
+   .icon {
+      margin-left: 5px;
+      color: #e17bda;
+   }
+}
+
+.apply--cta {
+   button {
+      outline: none;
+      border: none;
+      padding: 7px 20px;
+      font-size: 18px;
+      background: #4BC449;
+      border-radius: 15px;
+      color: #fff;
+      cursor: pointer;
+      &:hover {
+         background: #1b8f19;
+      }
    }
 }
