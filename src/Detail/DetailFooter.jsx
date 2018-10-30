@@ -13,7 +13,7 @@ const DetailFooter = (props) => {
                <button>Apply Now</button>
             </a>
             <div className="date">
-               <span>{ createdDay === 0 ? 'A day ago': `${createdDay} days ago`  }</span>
+               <span>{ createdDay === 0 || createdDay === 1 ? 'A day ago': `${createdDay} days ago`  }</span>
                <FontAwesomeIcon icon="clock" className="icon" />
             </div>
          </div>

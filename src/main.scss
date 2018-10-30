@@ -117,10 +117,14 @@
 }
 
 .post__date {
-   display: none;
    position: absolute;
-   right: 0;
-   bottom: 0;
+   right: 5px;
+   bottom: 5px;
+   .icon {
+      font-size: 13px;
+      margin-left: 3px;
+      color: #e17bda;
+   }
 }
 
 .detail__header {
