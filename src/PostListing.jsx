@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PostItem from './PostItem';
 import PropTypes from 'prop-types';
+import LoaderHOC from './util/LoaderHOC';
 
 class PostListing extends Component {
    render() {
@@ -17,4 +18,4 @@ PostListing.propTypes = {
    items: PropTypes.array
 };
 
-export default PostListing;
+export default LoaderHOC(PostListing);
