@@ -86,8 +86,8 @@ class IndexPage extends Component {
       return (
          <div className="index__main">
             <IndexHeader search={this.fetchData} location={this.handleLocation} query={this.handleQuery} />
-            { this.state.results &&
-               <PostListing items={this.state.results[this.state.currentIndex]} /> }
+            {/* { this.state.results && */}
+               <PostListing items={this.state.results} />
             {this.state.results && this.state.results.length > 0 ?
                <Pagination total={this.state.results.length} currentIndex={this.state.currentIndex} handlePagination={this.handlePagination} /> : null }
          </div>

@@ -340,6 +340,31 @@
    }
 }
 
+.placeholder__content {
+   padding: 0 4rem;
+   .placeholder {
+      &__title {
+         width: 80%;
+         background: #ddd;
+         height: 100px;
+         margin-bottom: 20px;
+      }
+      &__meta {
+         background: #ddd;
+         width: 50%;
+         height: 20px;
+         margin-bottom: 10px;
+      }
+   }
+   section {
+      max-width: 500px;
+      margin-bottom: 35px;
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+}
+
 @media screen and (min-width: 767px) {
    .index__main {
       margin: 0 auto;
@@ -347,6 +372,9 @@
    }
    .header__container {
       padding: 5rem 5rem 2rem;
+   }
+   .form__input {
+      width: 400px;
    }
    .post-listing {
       padding: 0 5rem;
