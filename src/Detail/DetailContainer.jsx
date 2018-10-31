@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import DetailHead from './DetailHead';
 import DetailBody from './DetailBody';
 import DetailFooter from './DetailFooter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class DetailContainer extends Component {
    constructor() {
@@ -19,7 +20,8 @@ class DetailContainer extends Component {
 
    render() {
       return (
-         <div>
+         <div className="detail__container">
+            <FontAwesomeIcon icon="arrow-left" className="back-icon" onClick={this.props.history.goBack} />
             {this.state.post &&
                <Fragment>
                   <DetailHead info={this.state.post} /> 

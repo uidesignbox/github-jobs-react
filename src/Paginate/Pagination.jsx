@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 
 class Pagination extends Component {
    render() {
+      const { total, currentIndex } = this.props;
       const items = [];
-      for (let i = 0; i < this.props.total; i++) {
-         items.push(<PaginateItem index={i} key={i} handlePagination={this.props.handlePagination} />)
+      for (let i = 0; i < total; i++) {
+         items.push(<PaginateItem index={i} active={i === currentIndex } key={i} handlePagination={this.props.handlePagination} />)
       }
       return (
          <div className="pagination__wrapper">
@@ -20,7 +21,7 @@ class Pagination extends Component {
 
 Pagination.propTypes = {
    total: PropTypes.number.isRequired,
-   index: PropTypes.number.isRequired,
+   currentIndex: PropTypes.number.isRequired,
    handlePagination: PropTypes.func
 }
 

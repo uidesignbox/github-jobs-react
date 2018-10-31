@@ -6,6 +6,7 @@ import {
    faClock,
    faBuilding,
    faFileAlt,
+   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -14,5 +15,6 @@ library.add(
    faUser,
    faClock,
    faBuilding,
-   faFileAlt
+   faFileAlt,
+   faArrowLeft
 )

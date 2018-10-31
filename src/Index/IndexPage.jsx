@@ -89,7 +89,7 @@ class IndexPage extends Component {
             { this.state.results &&
                <PostListing items={this.state.results[this.state.currentIndex]} /> }
             {this.state.results && this.state.results.length > 0 ?
-               <Pagination total={this.state.results.length} index={this.state.currentIndex} handlePagination={this.handlePagination} /> : null }
+               <Pagination total={this.state.results.length} currentIndex={this.state.currentIndex} handlePagination={this.handlePagination} /> : null }
          </div>
       )
    }
