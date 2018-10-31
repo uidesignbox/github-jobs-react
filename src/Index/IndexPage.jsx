@@ -75,7 +75,6 @@ class IndexPage extends Component {
    }
 
    componentDidUpdate() {
-      console.log(this.state)
       localStorage.setItem('githubJobs', JSON.stringify(this.state.results))
    }
 
