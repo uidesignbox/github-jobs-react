@@ -156,9 +156,12 @@
    }
 }
 
-.detail__container .back-icon {
-   font-size: 20px;
-   cursor: pointer;
+.detail__container {
+   padding: 2rem 20px;
+   .back-icon {
+      font-size: 20px;
+      cursor: pointer;
+   }
 }
 
 .detail__header {
