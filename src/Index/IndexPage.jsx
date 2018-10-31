@@ -16,6 +16,25 @@ class IndexPage extends Component {
       this.fetchData = this.fetchData.bind(this)
       this.handleQuery = this.handleQuery.bind(this)
       this.handleLocation = this.handleLocation.bind(this)
+      this.handlePagination = this.handlePagination.bind(this)
+      this.createChunk = this.createChunk.bind(this)
+   }
+
+   createChunk(array, size) {
+      const chunkedArray = [];
+      for (let i = 0; i < array.length; i++) {
+        const last = chunkedArray[chunkedArray.length - 1];
+        if (!last || last.length === size) {
+          chunkedArray.push([array[i]]);
+        } else {
+          last.push(array[i]);
+        }
+      }
+      return chunkedArray;
+   }
+
+   handlePagination(value) {
+      this.setState({ currentIndex: value })
    }
 
    handleQuery(value) {
@@ -36,7 +55,8 @@ class IndexPage extends Component {
             console.log(err);
             return;
          }
-         this.setState({ results: data })
+         const chunk = this.createChunk(data, 10)
+         this.setState({ results: chunk })
       })
    }
 
@@ -55,7 +75,6 @@ class IndexPage extends Component {
    }
 
    componentDidUpdate() {
-      console.log('I did UPDATE')
       localStorage.setItem('githubJobs', JSON.stringify(this.state.results))
    }
 
@@ -68,9 +87,9 @@ class IndexPage extends Component {
          <div className="index__main">
             <IndexHeader search={this.fetchData} location={this.handleLocation} query={this.handleQuery} />
             { this.state.results &&
-               <PostListing items={this.state.results.slice(0,10)} /> }
-            {this.state.results && this.state.results.length >= 50 ?
-               <Pagination /> : null }
+               <PostListing items={this.state.results[this.state.currentIndex]} /> }
+            {this.state.results && this.state.results.length > 0 ?
+               <Pagination total={this.state.results.length} index={this.state.currentIndex} handlePagination={this.handlePagination} /> : null }
          </div>
       )
    }

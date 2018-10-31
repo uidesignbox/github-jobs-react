@@ -51,7 +51,7 @@ class FormContainer extends Component {
                text='Search'
                type='text'
                value={this.state.query}
-               placeholder="UI / Frontend Developer"
+               placeholder="Search Github jobs"
                handleSearch={this.handleSearch}
             />
             { this.state.isLocationOpen &&
