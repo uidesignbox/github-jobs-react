@@ -1,6 +1,4 @@
-// Get day, date difference
+// Get date difference. First argument in floor is current date, second is passed argument.
 export const getDateDiff = (date) => {
-   const current = new Date();
-   date = date.split(' ')
-   return (current.getDate() - parseInt(date[2]))
+   return (Math.floor((new Date() - new Date(date)) / (1000*60*60*24)))
 }

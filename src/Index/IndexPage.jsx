@@ -78,10 +78,6 @@ class IndexPage extends Component {
       localStorage.setItem('githubJobs', JSON.stringify(this.state.results))
    }
 
-   componentWillUnmount() {
-      localStorage.removeItem('githubJobs')
-   }
-
    render() {
       return (
          <div className="index__main">
