@@ -81,7 +81,7 @@ class IndexPage extends Component {
    render() {
       return (
          <div className="index__main">
-            <IndexHeader search={this.fetchData} location={this.handleLocation} query={this.handleQuery} />
+            <IndexHeader search={this.fetchData} location={this.handleLocation} query={this.handleQuery} handleReset={() => this.setState({ currentIndex: 0 })} />
             { this.state.results &&
                <PostListing items={this.state.results[this.state.currentIndex]} /> }
             {this.state.results && this.state.results.length > 0 ?

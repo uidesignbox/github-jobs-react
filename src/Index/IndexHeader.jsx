@@ -10,7 +10,7 @@ class IndexHeader extends Component {
       return(
          <div className="header__container">
             <IndexTitle />
-            <FormContainer search={this.props.search} location={this.props.location} query={this.props.query} />
+            <FormContainer search={this.props.search} location={this.props.location} query={this.props.query} handleReset={this.props.handleReset} />
          </div>
       )
    }

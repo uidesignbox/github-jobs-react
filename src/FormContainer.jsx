@@ -39,7 +39,8 @@ class FormContainer extends Component {
    handleSubmit(e) {
       // Submit query to parent func
       e.preventDefault();
-      this.props.search()
+      e.target.blur();
+      this.props.search();
    }
 
    render() {
@@ -56,7 +57,7 @@ class FormContainer extends Component {
             />
             { this.state.isLocationOpen &&
                <LocationSearch toggle={this.handleLocation} placeholder={this.state.locationQuery} /> }
-            <FilterItems toggle={this.toggleLocation} />
+            <FilterItems toggle={this.toggleLocation} handleReset={this.props.handleReset} />
          </form>
       )
    }
